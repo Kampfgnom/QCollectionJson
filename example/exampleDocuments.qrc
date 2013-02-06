@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/examples">
+        <file alias="collection.json">collection.json</file>
+        <file alias="error.json">error.json</file>
+        <file alias="item.json">item.json</file>
+        <file alias="queries.json">queries.json</file>
+        <file alias="template.json">template.json</file>
+    </qresource>
+</RCC>

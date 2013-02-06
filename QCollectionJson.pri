@@ -1,0 +1,8 @@
+isEmpty(QCOLLECTIONJSON_PATH) {
+    error(You have to set QCOLLECTIONJSON_PATH to the path of QCollectionJson)
+}
+
+QCOLLECTIONJSON_TARGET           = qcollectionjson
+QCOLLECTIONJSON_VERSION          = 0.1.0
+QCOLLECTIONJSON_INCLUDEPATH      = $$PWD/include
+QCOLLECTIONJSON_LIBS             = -L$$QCOLLECTIONJSON_PATH/src -l$$QCOLLECTIONJSON_TARGET
