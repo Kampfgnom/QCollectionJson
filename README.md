@@ -44,14 +44,12 @@ QCollectionJsonDocument collectionDocument = QCollectionJsonDocument::fromQVaria
 Writing
 -------
 ```` C++
-QCollectionJsonDocument errorDocument;
-errorDocument.setHref(QUrl("http://example.com/friends"));
-QCollectionJsonError error;
-error.setTitle("File not found!");
-error.setCode("404");
-error.setMessage("The file could not be found.");
+// Create error Collection+JSON
+QCollectionJsonDocument errorDocument(QUrl("http://example.com/friends"));
+QCollectionJsonError error("File not found!", "404", "The file could not be found.");
 errorDocument.setError(error);
 
+// Convert to JSON QByteArray
 QVariant documentVariant = errorDocument.toVariant();
 QJsonDocument jsonDoc = QJsonDocument::fromVariant(documentVariant);
 qDebug() << jsonDoc.toJson(); // Write to some QTcpSocket etc...
