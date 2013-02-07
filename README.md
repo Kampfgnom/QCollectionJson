@@ -13,7 +13,7 @@ QCollectionJson comes with some helpers to include it in you project.
 
 You can simply add the whole project to your qmake based project and add the following lines to your application's project file:
 
-````
+```` C++
 QCOLLECTIONJSON_PATH = relative/or/absolute/path/to/QCollectionJson
 include($$QCOLLECTIONJSON_PATH/QCollectionJson.pri)
 LIBS            += $$QCOLLECTIONJSON_LIBS
@@ -28,7 +28,7 @@ Usage
 
 Include header, parse JSON, parse Collection+JSON:
 
-````
+```` C++
 #include <QCollectionJson.h>
 ...
 
