@@ -37,7 +37,7 @@ QCollectionJsonError::~QCollectionJsonError()
 
 bool QCollectionJsonError::isValid() const
 {
-    return false;
+    return data->valid;
 }
 
 QString QCollectionJsonError::title() const
@@ -47,6 +47,7 @@ QString QCollectionJsonError::title() const
 
 void QCollectionJsonError::setTitle(const QString &title)
 {
+    data->valid = data->valid || !title.isEmpty();
     data->title = title;
 }
 
@@ -57,6 +58,7 @@ QString QCollectionJsonError::code() const
 
 void QCollectionJsonError::setCode(const QString &code)
 {
+    data->valid = data->valid || !code.isEmpty();
     data->code = code;
 }
 
@@ -67,6 +69,7 @@ QString QCollectionJsonError::message() const
 
 void QCollectionJsonError::setMessage(const QString &message)
 {
+    data->valid = data->valid || !message.isEmpty();
     data->message = message;
 }
 

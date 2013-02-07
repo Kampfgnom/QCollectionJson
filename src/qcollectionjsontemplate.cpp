@@ -64,7 +64,7 @@ QVariant QCollectionJsonTemplate::toVariant() const
     foreach(const QCollectionJsonData data, d->data) {
         list.append(data.toVariant());
     }
-    result[DATA] = list;
+    if(!list.isEmpty()) result[DATA] = list;
 
     return result;
 }

@@ -99,9 +99,9 @@ QVariant QCollectionJsonLink::toVariant() const
     QVariantMap result;
     result[REL] = rel();
     result[HREF] = href();
-    result[PROMPT] = prompt();
-    result[NAME] = name();
-    result[RENDER] = render();
+    if(!prompt().isEmpty()) result[PROMPT] = prompt();
+    if(!name().isEmpty()) result[NAME] = name();
+    if(!render().isEmpty()) result[RENDER] = render();
     return result;
 }
 

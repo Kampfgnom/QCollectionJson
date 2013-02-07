@@ -234,7 +234,9 @@ QVariant QCollectionJsonDocument::toVariant() const
 
     // Template
     if(templateLink().isEmpty()) {
-        collection[TEMPLATE] = templateData().toVariant();
+        QVariantMap v = templateData().toVariant().toMap();
+        if(!v.isEmpty())
+            collection[TEMPLATE] = v;
     }
 
     // Queries

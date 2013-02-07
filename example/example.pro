@@ -4,7 +4,7 @@ TARGET          = QJsonCollectionExample
 VERSION         = 0.1.0
 TEMPLATE        = app
 QT              +=
-QT              -= gui
+QT              -=
 CONFIG          +=
 QMAKE_CXXFLAGS  += -Wall -ansi -pedantic -Wno-long-long
 

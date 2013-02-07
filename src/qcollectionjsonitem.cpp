@@ -93,13 +93,13 @@ QVariant QCollectionJsonItem::toVariant() const
     foreach(const QCollectionJsonData data, d->data) {
         list.append(data.toVariant());
     }
-    result[DATA] = list;
+    if(!list.isEmpty()) result[DATA] = list;
 
     list.clear();
     foreach(const QCollectionJsonLink link, d->links) {
         list.append(link.toVariant());
     }
-    result[LINKS] = list;
+    if(!list.isEmpty()) result[LINKS] = list;
 
     return result;
 }

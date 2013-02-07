@@ -72,9 +72,9 @@ static const QString VALUE("value");
 QVariant QCollectionJsonData::toVariant() const
 {
     QVariantMap result;
-    result[PROMPT] = prompt();
     result[NAME] = name();
-    result[VALUE] = value();
+    if(!value().isNull()) result[VALUE] = value();
+    if(!prompt().isEmpty()) result[PROMPT] = prompt();
     return result;
 }
 

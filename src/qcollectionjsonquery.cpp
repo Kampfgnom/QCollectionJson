@@ -111,14 +111,14 @@ QVariant QCollectionJsonQuery::toVariant() const
     QVariantMap result;
     result[REL] = rel();
     result[HREF] = href();
-    result[PROMPT] = name();
-    result[NAME] = href();
+    if(!prompt().isEmpty()) result[PROMPT] = prompt();
+    if(!prompt().isEmpty()) result[NAME] = name();
 
     QVariantList list;
     foreach(const QCollectionJsonData data, d->data) {
         list.append(data.toVariant());
     }
-    result[DATA] = list;
+    if(!list.isEmpty()) result[DATA] = list;
 
     return result;
 }
