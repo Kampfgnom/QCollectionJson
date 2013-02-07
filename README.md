@@ -26,6 +26,9 @@ You may of course setup everything as you like :wink:
 Usage
 =====
 
+Parsing
+-------
+
 Include header, parse JSON, parse Collection+JSON:
 
 ```` C++
@@ -36,6 +39,22 @@ QByteArray data = "... some JSON data ...";
 
 QJsonDocument document = QJsonDocument::fromJson(data);
 QCollectionJsonDocument collectionDocument = QCollectionJsonDocument::fromQVariant(document.toVariant().toMap());
+````
+
+Writing
+-------
+```` C++
+QCollectionJsonDocument errorDocument;
+errorDocument.setHref(QUrl("http://example.com/friends"));
+QCollectionJsonError error;
+error.setTitle("File not found!");
+error.setCode("404");
+error.setMessage("The file could not be found.");
+errorDocument.setError(error);
+
+QVariant documentVariant = errorDocument.toVariant();
+QJsonDocument jsonDoc = QJsonDocument::fromVariant(documentVariant);
+qDebug() << jsonDoc.toJson(); // Write to some QTcpSocket etc...
 ````
 
 Please have a look at the example for further details.
