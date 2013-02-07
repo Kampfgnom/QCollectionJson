@@ -19,6 +19,11 @@ QCollectionJsonItem::QCollectionJsonItem() : d(new QCollectionJsonItemData)
 {
 }
 
+QCollectionJsonItem::QCollectionJsonItem(const QUrl &href) : d(new QCollectionJsonItemData)
+{
+    setHref(href);
+}
+
 QCollectionJsonItem::QCollectionJsonItem(const QCollectionJsonItem &rhs) : d(rhs.d)
 {
 }

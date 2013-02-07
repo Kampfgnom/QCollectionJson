@@ -12,6 +12,7 @@ class QCollectionJsonLink
 {
 public:
     QCollectionJsonLink();
+    QCollectionJsonLink(const QUrl &href, const QString &rel);
     QCollectionJsonLink(const QCollectionJsonLink &);
     QCollectionJsonLink &operator=(const QCollectionJsonLink &);
     ~QCollectionJsonLink();

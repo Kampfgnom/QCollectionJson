@@ -15,6 +15,13 @@ QCollectionJsonData::QCollectionJsonData() : data(new QCollectionJsonDataData)
 {
 }
 
+QCollectionJsonData::QCollectionJsonData(const QString &name, const QVariant value) :
+    data(new QCollectionJsonDataData)
+{
+    setName(name);
+    setValue(value);
+}
+
 QCollectionJsonData::QCollectionJsonData(const QCollectionJsonData &rhs) : data(rhs.data)
 {
 }

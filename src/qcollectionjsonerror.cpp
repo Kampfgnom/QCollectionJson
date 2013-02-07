@@ -20,6 +20,14 @@ QCollectionJsonError::QCollectionJsonError() : data(new QCollectionJsonErrorData
 {
 }
 
+QCollectionJsonError::QCollectionJsonError(const QString &title, const QString &code, const QString &message) :
+    data(new QCollectionJsonErrorData)
+{
+    setTitle(title);
+    setCode(code);
+    setMessage(message);
+}
+
 QCollectionJsonError::QCollectionJsonError(const QCollectionJsonError &rhs) : data(rhs.data)
 {
 }

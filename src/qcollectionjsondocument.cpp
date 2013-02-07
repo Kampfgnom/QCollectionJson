@@ -44,6 +44,11 @@ QCollectionJsonDocument::QCollectionJsonDocument() : data(new QCollectionJsonDoc
 {
 }
 
+QCollectionJsonDocument::QCollectionJsonDocument(const QUrl &href) : data(new QCollectionJsonDocumentData)
+{
+    setHref(href);
+}
+
 QCollectionJsonDocument::QCollectionJsonDocument(const QCollectionJsonDocument &rhs) : data(rhs.data)
 {
 }

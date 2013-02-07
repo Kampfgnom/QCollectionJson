@@ -14,6 +14,7 @@ class QCollectionJsonItem
 {
 public:
     QCollectionJsonItem();
+    QCollectionJsonItem(const QUrl &href);
     QCollectionJsonItem(const QCollectionJsonItem &);
     QCollectionJsonItem &operator=(const QCollectionJsonItem &);
     ~QCollectionJsonItem();

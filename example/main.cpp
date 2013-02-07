@@ -67,21 +67,18 @@ int main(int argc, char *argv[])
     inspectFile(QLatin1String(":/examples/template.json"));
 
     // Create a Collection+JSON
-    QCollectionJsonDocument document;
-    document.setHref(QUrl("http://example.com/friends"));
+    QCollectionJsonDocument document(QUrl("http://example.com/friends"));
 
-    QCollectionJsonItem item;
-    item.setHref(QUrl("http://example.com/friends/Niklas"));
-    QCollectionJsonData data;
-    data.setName("name");
-    data.setValue(QVariant("Niklas"));
+
+    QCollectionJsonItem item(QUrl("http://example.com/friends/Niklas"));
+
+    QCollectionJsonData data("name", QVariant("Niklas"));
     data.setPrompt("First Name");
     item.addData(data);
 
-    QCollectionJsonLink link;
-    link.setHref(QUrl("http://example.com/blogs/Niklas"));
-    link.setRel("blog");
+    QCollectionJsonLink link(QUrl("http://example.com/blogs/Niklas"), "blog");
     item.addLink(link);
+
     document.addItem(item);
     document.addItem(item);
 
@@ -89,11 +86,8 @@ int main(int argc, char *argv[])
     tpl.addData(data);
     document.setTemplate(tpl);
 
-    QCollectionJsonQuery query;
-    query.setHref(QUrl("http://example.com/search"));
-    query.setRel("search");
-    QCollectionJsonData queryData;
-    queryData.setName("searchString");
+    QCollectionJsonQuery query(QUrl("http://example.com/search"), "search");
+    QCollectionJsonData queryData("searchString");
     queryData.setPrompt("Search");
     query.addData(queryData);
     document.addQuery(query);
@@ -103,12 +97,8 @@ int main(int argc, char *argv[])
     qDebug() << jsonDoc.toJson();
 
     // Create error Collection+JSON
-    QCollectionJsonDocument errorDocument;
-    errorDocument.setHref(QUrl("http://example.com/friends"));
-    QCollectionJsonError error;
-    error.setTitle("File not found!");
-    error.setCode("404");
-    error.setMessage("The file could not be found.");
+    QCollectionJsonDocument errorDocument(QUrl("http://example.com/friends"));
+    QCollectionJsonError error("File not found!", "404", "The file could not be found.");
     errorDocument.setError(error);
 
     documentVariant = errorDocument.toVariant();

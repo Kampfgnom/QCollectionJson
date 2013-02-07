@@ -20,6 +20,7 @@ class QCollectionJsonDocument
 {
 public:
     QCollectionJsonDocument();
+    QCollectionJsonDocument(const QUrl &href);
     QCollectionJsonDocument(const QCollectionJsonDocument &);
     QCollectionJsonDocument &operator=(const QCollectionJsonDocument &);
     ~QCollectionJsonDocument();

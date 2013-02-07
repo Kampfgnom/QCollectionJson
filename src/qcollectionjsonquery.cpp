@@ -21,6 +21,12 @@ QCollectionJsonQuery::QCollectionJsonQuery() : d(new QJsonCollectionQueryData)
 {
 }
 
+QCollectionJsonQuery::QCollectionJsonQuery(const QUrl &href, const QString &rel) : d(new QJsonCollectionQueryData)
+{
+    setHref(href);
+    setRel(rel);
+}
+
 QCollectionJsonQuery::QCollectionJsonQuery(const QCollectionJsonQuery &rhs) : d(rhs.d)
 {
 }

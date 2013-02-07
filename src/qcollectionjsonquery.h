@@ -13,6 +13,7 @@ class QCollectionJsonQuery
 {
 public:
     QCollectionJsonQuery();
+    QCollectionJsonQuery(const QUrl &href, const QString &rel);
     QCollectionJsonQuery(const QCollectionJsonQuery &);
     QCollectionJsonQuery &operator=(const QCollectionJsonQuery &);
     ~QCollectionJsonQuery();

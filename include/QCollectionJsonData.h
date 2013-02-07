@@ -3,7 +3,8 @@
 
 #include <QSharedDataPointer>
 
-class QVariant;
+#include <QString>
+#include <QVariant>
 
 class QCollectionJsonDataData;
 
@@ -11,6 +12,7 @@ class QCollectionJsonData
 {
 public:
     QCollectionJsonData();
+    QCollectionJsonData(const QString &name, const QVariant value = QVariant());
     QCollectionJsonData(const QCollectionJsonData &);
     QCollectionJsonData &operator=(const QCollectionJsonData &);
     ~QCollectionJsonData();

@@ -18,6 +18,12 @@ QCollectionJsonLink::QCollectionJsonLink() : data(new QCollectionJsonLinkData)
 {
 }
 
+QCollectionJsonLink::QCollectionJsonLink(const QUrl &href, const QString &rel) : data(new QCollectionJsonLinkData)
+{
+    setHref(href);
+    setRel(rel);
+}
+
 QCollectionJsonLink::QCollectionJsonLink(const QCollectionJsonLink &rhs) : data(rhs.data)
 {
 }

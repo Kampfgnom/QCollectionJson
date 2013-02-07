@@ -11,6 +11,7 @@ class QCollectionJsonError
 {
 public:
     QCollectionJsonError();
+    QCollectionJsonError(const QString &title, const QString &code, const QString &message);
     QCollectionJsonError(const QCollectionJsonError &);
     QCollectionJsonError &operator=(const QCollectionJsonError &);
     ~QCollectionJsonError();
