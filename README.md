@@ -57,6 +57,17 @@ qDebug() << jsonDoc.toJson(); // Write to some QTcpSocket etc...
 
 Please have a look at the example for further details.
 
+Requirements and building
+=========================
+
+QCollectionJson has been developed and tested only on Qt 5.0 on a Mac. The library itself should be compatible to older versions of Qt, but the example uses Qt 5's QJson* classes.
+
+The project can be build in Qt Creator or by issuing the following commands.
+
+````
+qmake
+make
+````
 
 License
 =======
