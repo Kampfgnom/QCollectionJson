@@ -57,6 +57,7 @@ qDebug() << jsonDoc.toJson(); // Write to some QTcpSocket etc...
 
 Please have a look at the example for further details.
 
+
 Requirements and building
 =========================
 
@@ -68,6 +69,16 @@ The project can be build in Qt Creator or by issuing the following commands.
 qmake
 make
 ````
+
+Contributing
+============
+
+Since I wrote the library before I decided to switch to [HAL](http://stateless.co/hal_specification.html), this library is currently not in use and not well tested.
+
+If you find errors, simply file an issue in GitHub, or even better:
+
+If you want to contribute to QCollectionJson, you can do the usual Fork-Patch-FilePullRequest dance. I might even tranfser the project in someone else's hands!
+
 
 License
 =======
